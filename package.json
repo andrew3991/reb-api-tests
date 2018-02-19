@@ -1,0 +1,15 @@
+{
+  "name": "reb-api-tests",
+  "version": "1.0.0",
+  "description": "Project REB",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test-api-reb": "newman run REB_Tests.postman_collection.json -e Rosevrobank.postman_environment.json --bail newman"
+  },
+  "author": "AndreyQA",
+  "dependencies": {
+    "newman": "^3.9.3"
+  }
+}
