@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test-api-reb": "newman run tests/REB_Tests.postman_collection.json -e tests/Rosevrobank.postman_environment.json --bail newman"
+    "test-api-reb": "newman run tests/REB_Tests.postman_collection.json -e tests/Rosevrobank.postman_environment.json --bail --reporters junit --reporter-json-export newman.xml"
   },
   "author": "AndreyQA",
   "dependencies": {
