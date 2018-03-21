@@ -1,8 +1,7 @@
 {
 	"info": {
-		"name": "REB_Tests",
 		"_postman_id": "c3b79648-70db-d530-1929-a315d5008c50",
-		"description": "",
+		"name": "REB_Tests",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
@@ -102,8 +101,7 @@
 									"mode": "raw",
 									"raw": "{\r\n\"sum\": {\r\n\"amount\": 1000,\r\n\"currency\": \"RUR\"\r\n},\r\n\"from_currency\": \"RUR\",\r\n\"to_currency\": \"EUR\"\r\n}"
 								},
-								"url": "{{schema}}://{{host}}/bankapp/transactions/rates",
-								"description": null
+								"url": "{{schema}}://{{host}}/bankapp/transactions/rates"
 							},
 							"response": []
 						},
@@ -194,8 +192,7 @@
 									"mode": "raw",
 									"raw": "{\n  \"sum\": {\n    \"amount\": 1000,\n    \"currency\": \"RUR\"\n  },\n  \"from_currency\": \"RUR\",\n  \"to_currency\": \"USD\"\n}"
 								},
-								"url": "{{schema}}://{{host}}/bankapp/info/exchangerates_full",
-								"description": null
+								"url": "{{schema}}://{{host}}/bankapp/info/exchangerates_full"
 							},
 							"response": []
 						},
@@ -427,12 +424,10 @@
 									"query": [
 										{
 											"key": "entry_point",
-											"value": "exchange",
-											"equals": true
+											"value": "exchange"
 										}
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						},
@@ -514,8 +509,7 @@
 									"mode": "raw",
 									"raw": "{\r\n  \"field_list\": {\r\n    \"scheme_field\": [{\r\n      \"type\": \"LabelDivider\",\r\n      \"field_id\": \"label_divider\",\r\n      \"label_divider\": {\r\n        \"title\": \"Сумма счета\",\r\n        \"switcher\": false\r\n      }\r\n    }, {\r\n      \"type\": \"money\",\r\n      \"field_id\": \"money\",\r\n      \"value\": \"1200\",\r\n      \"money\": {\r\n        \"title\": \"Сумма\",\r\n        \"is_mandatory\": true,\r\n        \"is_locked\": false,\r\n        \"currency\": \"CNY\"\r\n      }\r\n    }, {\r\n      \"type\": \"LabelDivider\",\r\n      \"field_id\": \"label_divider2\",\r\n      \"label_divider\": {\r\n        \"title\": \"Источник\",\r\n        \"switcher\": false\r\n      }\r\n    }, {\r\n      \"type\": \"select_product_from\",\r\n      \"field_id\": \"select_product_from\",\r\n      \"value\": \"574522103\",\r\n      \"select_product_from\": {\r\n        \"title\": \"Источник\",\r\n        \"is_mandatory\": true,\r\n        \"is_locked\": true\r\n      }\r\n    }, {\r\n      \"type\": \"select_text\",\r\n      \"field_id\": \"select_region\",\r\n      \"value\": \"ENT_BRANCH_0000\",\r\n      \"select_text\": {\r\n        \"title\": \"Выберите регион:\",\r\n        \"is_mandatory\": true,\r\n        \"is_locked\": false,\r\n        \"value_list\": [{\r\n          \"title\": \"Москва\",\r\n          \"value\": \"ENT_BRANCH_0000\"\r\n        }],\r\n        \"hint\": \"\"\r\n      }\r\n    }, {\r\n      \"type\": \"accept_terms\",\r\n      \"field_id\": \"accept_terms_id\",\r\n      \"accept_terms\": {\r\n        \"link\": \"\",\r\n        \"title\": \"Я согласен на условия счета\"\r\n      }\r\n    }, {\r\n      \"type\": \"exchange\",\r\n      \"field_id\": \"exchange\",\r\n      \"exchange\": {\r\n        \"from_amount\": {\r\n          \"currency\": \"RUR\",\r\n          \"amount\": 0\r\n        },\r\n        \"to_amount\": {\r\n          \"currency\": \"CNY\",\r\n          \"amount\": 1200\r\n        },\r\n        \"first_currency\": {\r\n          \"currency\": \"CNY\",\r\n          \"amount\": \"1\"\r\n        },\r\n        \"second_currency\": {\r\n          \"currency\": \"RUR\",\r\n          \"amount\": \"NaN\"\r\n        }\r\n      }\r\n    }]\r\n  },\r\n  \"deposit_id\": \"exchange\",\r\n  \"scheme_id\": \"Exchange\",\r\n  \"interest\": 0.0,\r\n  \"currency\": \"CNY\"\r\n}"
 								},
-								"url": "{{schema}}://{{host}}/bankapp/products/deposit",
-								"description": null
+								"url": "{{schema}}://{{host}}/bankapp/products/deposit"
 							},
 							"response": []
 						},
@@ -741,22 +735,211 @@
 									"query": [
 										{
 											"key": "scheme_id",
-											"value": "Exchange",
-											"equals": true
+											"value": "Exchange"
 										},
 										{
 											"key": "scheme_type",
-											"value": "exchange",
-											"equals": true
+											"value": "exchange"
 										}
 									]
-								},
-								"description": null
+								}
 							},
 							"response": []
 						}
 					],
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "В организацию",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Перевод по номеру телефона",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{schema}}://{{host}}/bankapp/transactions/scheme_details?scheme_id=TransferByPhone&scheme_type=transfer",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankapp",
+								"transactions",
+								"scheme_details"
+							],
+							"query": [
+								{
+									"key": "scheme_id",
+									"value": "TransferByPhone"
+								},
+								{
+									"key": "scheme_type",
+									"value": "transfer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "На любую карту",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{schema}}://{{host}}/bankapp/transactions/scheme_details?scheme_id=TransferCardToCard&scheme_type=transfer",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankapp",
+								"transactions",
+								"scheme_details"
+							],
+							"query": [
+								{
+									"key": "scheme_id",
+									"value": "TransferCardToCard"
+								},
+								{
+									"key": "scheme_type",
+									"value": "transfer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Между счетами и картами",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{schema}}://{{host}}/bankapp/transactions/scheme_details?scheme_id=TransferPaymentInstruments&scheme_type=transfer",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankapp",
+								"transactions",
+								"scheme_details"
+							],
+							"query": [
+								{
+									"key": "scheme_id",
+									"value": "TransferPaymentInstruments"
+								},
+								{
+									"key": "scheme_type",
+									"value": "transfer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Клиенту банка на счет",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{schema}}://{{host}}/bankapp/transactions/scheme_details?scheme_id=TransferAccountClient&scheme_type=transfer",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankapp",
+								"transactions",
+								"scheme_details"
+							],
+							"query": [
+								{
+									"key": "scheme_id",
+									"value": "TransferAccountClient"
+								},
+								{
+									"key": "scheme_type",
+									"value": "transfer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Пополнить с другой карты",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{schema}}://{{host}}/bankapp/transactions/scheme_details?scheme_id=TransferFromExternalCard&scheme_type=transfer",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankapp",
+								"transactions",
+								"scheme_details"
+							],
+							"query": [
+								{
+									"key": "scheme_id",
+									"value": "TransferFromExternalCard"
+								},
+								{
+									"key": "scheme_type",
+									"value": "transfer"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Человеку на счет (физ лицу)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "{{schema}}://{{host}}/bankapp/transactions/scheme_details?scheme_id=TransferAnotherBankPh&scheme_type=transfer",
+							"protocol": "{{schema}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"bankapp",
+								"transactions",
+								"scheme_details"
+							],
+							"query": [
+								{
+									"key": "scheme_id",
+									"value": "TransferAnotherBankPh"
+								},
+								{
+									"key": "scheme_type",
+									"value": "transfer"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -846,7 +1029,7 @@
 								"header": [
 									{
 										"key": "sessionid",
-										"value": "{{test_session}}"
+										"value": "{{sessionid}}"
 									},
 									{
 										"key": "Content-Type",
@@ -857,8 +1040,7 @@
 									"mode": "raw",
 									"raw": "{\n  \"query\": \"\"\n}"
 								},
-								"url": "{{schema}}://{{host}}/bankapp/templates",
-								"description": null
+								"url": "{{schema}}://{{host}}/bankapp/templates"
 							},
 							"response": []
 						}
@@ -944,7 +1126,7 @@
 								"header": [
 									{
 										"key": "sessionid",
-										"value": "{{test_session}}"
+										"value": "{{sessionid}}"
 									},
 									{
 										"key": "Content-Type",
@@ -955,8 +1137,7 @@
 									"mode": "raw",
 									"raw": "{\n  \"attempt_id\": \"\",\n  \"code\": \"\"\n}"
 								},
-								"url": "{{schema}}://{{host}}/bankapp/autopayments",
-								"description": null
+								"url": "{{schema}}://{{host}}/bankapp/autopayments"
 							},
 							"response": []
 						}
@@ -1069,32 +1250,26 @@
 							"query": [
 								{
 									"key": "product_id",
-									"value": "",
-									"equals": false
+									"value": null
 								},
 								{
 									"key": "begin_date",
-									"value": "",
-									"equals": false
+									"value": null
 								},
 								{
 									"key": "end_date",
-									"value": "",
-									"equals": false
+									"value": null
 								},
 								{
 									"key": "offset",
-									"value": "",
-									"equals": false
+									"value": null
 								},
 								{
 									"key": "limit",
-									"value": "",
-									"equals": false
+									"value": null
 								}
 							]
-						},
-						"description": null
+						}
 					},
 					"response": []
 				}
@@ -1324,22 +1499,18 @@
 									"query": [
 										{
 											"key": "product_to_id",
-											"value": "2313375",
-											"equals": true
+											"value": "2313375"
 										},
 										{
 											"key": "scheme_id",
-											"value": "ToLoan",
-											"equals": true
+											"value": "ToLoan"
 										},
 										{
 											"key": "scheme_type",
-											"value": "transfer",
-											"equals": true
+											"value": "transfer"
 										}
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						},
@@ -1448,17 +1619,14 @@
 									"query": [
 										{
 											"key": "id",
-											"value": "2313375",
-											"equals": true
+											"value": "2313375"
 										},
 										{
 											"key": "type",
-											"value": "credit",
-											"equals": true
+											"value": "credit"
 										}
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						},
@@ -1555,22 +1723,18 @@
 									"query": [
 										{
 											"key": "scheme_id",
-											"value": "Topup",
-											"equals": true
+											"value": "Topup"
 										},
 										{
 											"key": "scheme_type",
-											"value": "transfer",
-											"equals": true
+											"value": "transfer"
 										},
 										{
 											"key": "product_to_id",
-											"value": "2313375",
-											"equals": true
+											"value": "2313375"
 										}
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						},
@@ -1675,27 +1839,108 @@
 									"query": [
 										{
 											"key": "product_id",
-											"value": "2313375",
-											"equals": true
+											"value": "2313375"
 										},
 										{
 											"key": "offset",
-											"value": "0",
-											"equals": true
+											"value": "0"
 										},
 										{
 											"key": "limit",
-											"value": "10",
-											"equals": true
+											"value": "10"
 										}
 									]
-								},
-								"description": ""
+								}
 							},
 							"response": []
 						}
 					],
 					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Виртуальная карта",
+					"description": "",
+					"item": [
+						{
+							"name": "Получение схемы ВК",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "sessionid",
+										"value": "{{sessionid}}"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {},
+								"url": "{{schema}}://{{host}}/bankapp/products/virtual"
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Счета",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Вклады",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Карты",
+					"description": "",
+					"item": [],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "Получение схемы для открытия накопительного счета",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "sessionid",
+								"value": "{{sessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {},
+						"url": "{{schema}}://{{host}}/bankapp/products/deposit"
+					},
+					"response": []
+				},
+				{
+					"name": "Получение схемы для открытия накопительного счета Copy",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "sessionid",
+								"value": "{{sessionid}}"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"field_list\": {\r\n\t\t\"scheme_field\": [{\r\n\t\t\t\"type\": \"select_text\",\r\n\t\t\t\"field_id\": \"select_region\",\r\n\t\t\t\"value\": \"ENT_BRANCH_0000\",\r\n\t\t\t\"select_text\": {\r\n\t\t\t\t\"title\": \"Выберите регион:\",\r\n\t\t\t\t\"is_mandatory\": true,\r\n\t\t\t\t\"is_locked\": false,\r\n\t\t\t\t\"value_list\": [{\r\n\t\t\t\t\t\"title\": \"Москва\",\r\n\t\t\t\t\t\"value\": \"ENT_BRANCH_0000\"\r\n\t\t\t\t}, {\r\n\t\t\t\t\t\"title\": \"Санкт-Петербург\",\r\n\t\t\t\t\t\"value\": \"ENT_BRANCH_8000\"\r\n\t\t\t\t}, {\r\n\t\t\t\t\t\"title\": \"Новосибирск\",\r\n\t\t\t\t\t\"value\": \"ENT_BRANCH_7000\"\r\n\t\t\t\t}, {\r\n\t\t\t\t\t\"title\": \"Самара\",\r\n\t\t\t\t\t\"value\": \"ENT_BRANCH_6000\"\r\n\t\t\t\t}, {\r\n\t\t\t\t\t\"title\": \"Челябинск\",\r\n\t\t\t\t\t\"value\": \"ENT_BRANCH_4000\"\r\n\t\t\t\t}],\r\n\t\t\t\t\"hint\": \"В следующих регионах Вы сможете получить бумажную версию договора счета\"\r\n\t\t\t}\r\n\t\t}, {\r\n\t\t\t\"type\": \"accept_terms\",\r\n\t\t\t\"field_id\": \"accept_terms_id\",\r\n\t\t\t\"accept_terms\": {\r\n\t\t\t\t\"link\": \"https://vb.rosevrobank.ru/information/usloviya-i-tarify\",\r\n\t\t\t\t\"title\": \"Согласен на условия открытия счета\"\r\n\t\t\t}\r\n\t\t}]\r\n\t},\r\n\t\"deposit_id\": \"Nakopitelny_schet\",\r\n\t\"interest\": 6.5,\r\n\t\"currency\": \"RUR\"\r\n}"
+						},
+						"url": "{{schema}}://{{host}}/bankapp/products/deposit"
+					},
+					"response": []
 				}
 			]
 		}
